@@ -15,7 +15,7 @@ async function getDeviceType() {
         isMobile,
         image: {
             src: isMobile ? "/banner-mobile.png" : "/banner.png",
-            height: isMobile ? 569 : 598,
+            height: isMobile ? 'h-[569px]' : 'h-[598px]',
             alt: isMobile ? "Amor mobile banner" : "Amor desktop banner"
         }
     }
@@ -26,7 +26,7 @@ export default async function Home() {
 
     return (
         <div>
-            <div className={`h-[${image.height}px] w-full relative flex justify-center items-center`}>
+            <div className={`${image.height} w-full relative flex justify-center items-center`}>
                 <Image
                     src={image.src}
                     alt={image.alt}
