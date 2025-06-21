@@ -64,10 +64,10 @@ const Navbar = () => {
                             </button>
                         </div>
                         <div className='flex flex-col gap-7 mt-4'>
-                            <Link href="/" className={`text-sm font-bold ${isAboutPage ? 'text-black' : 'text-white'} text-center`}>TRANG CHỦ</Link>
-                            <Link href="/about" className={`text-sm ${isAboutPage ? 'text-black' : 'text-white'} text-center`}>VỀ AMOR</Link>
-                            <Link href="/contact" className={`text-sm ${isAboutPage ? 'text-black' : 'text-white'} text-center`}>MENU</Link>
-                            <Link href="/contact" className={`text-sm ${isAboutPage ? 'text-black' : 'text-white'} text-center`}>KHỞI NGHIỆP</Link>
+                            <Link href="/" onClick={() => setIsOpen(false)} className={`text-sm font-bold ${isAboutPage ? 'text-black' : 'text-white'} text-center`}>TRANG CHỦ</Link>
+                            <Link href="/about" onClick={() => setIsOpen(false)} className={`text-sm ${isAboutPage ? 'text-black' : 'text-white'} text-center`}>VỀ AMOR</Link>
+                            <Link href="/contact" onClick={() => setIsOpen(false)} className={`text-sm ${isAboutPage ? 'text-black' : 'text-white'} text-center`}>MENU</Link>
+                            <Link href="/contact" onClick={() => setIsOpen(false)} className={`text-sm ${isAboutPage ? 'text-black' : 'text-white'} text-center`}>KHỞI NGHIỆP</Link>
                         </div>
                     </div>
                 </DialogContent>
