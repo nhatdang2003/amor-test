@@ -28,7 +28,9 @@ const Navbar = () => {
     return (
         <header className={`h-[50px] md:h-[80px] fixed top-0 z-50 w-full flex justify-between items-center px-[20px] md:px-[40px] transition-colors duration-300 
         ${isScrolled ? `${isAboutPage ? 'bg-white/20' : 'bg-black/40'} backdrop-blur-[75px] shadow-[0_4px_4px_0_rgba(0,0,0,0.04)]` : 'bg-transparent'}`}>
-            <Image src={isAboutPage ? '/amor-logo-light.png' : '/amor-logo.png'} alt="logo" width={119} height={32} />
+            <Image src={isAboutPage ? '/amor-logo-light.png' : '/amor-logo.png'} alt="logo" width={119} height={32} className='hidden md:block' />
+            <Image src={isAboutPage ? '/amor-logo-light.png' : '/amor-logo.png'} alt="logo" width={89} height={24} className='block md:hidden' />
+
             <div className='hidden md:flex items-center gap-[60px]'>
                 <Link href="/" className={`text-sm font-bold ${isAboutPage ? 'text-black' : 'text-white'}`}>TRANG CHỦ</Link>
                 <Link href="/about" className={`text-sm ${isAboutPage ? 'text-black' : 'text-white'}`}>VỀ AMOR</Link>
@@ -47,7 +49,11 @@ const Navbar = () => {
             >
                 <DialogContent
                     className={`!h-screen !w-screen !max-w-none !top-0 !left-0 !translate-x-0 !translate-y-0 !rounded-none !border-none !p-0 !m-0
-                    ${isAboutPage ? 'bg-white/20' : 'bg-[#00000033]'} backdrop-blur-[75px] shadow-[0_4px_4px_0_rgba(0,0,0,0.04)] inset-0`}
+                    ${isAboutPage ? 'bg-white/20' : 'bg-[#00000033]'} backdrop-blur-[75px] shadow-[0_4px_4px_0_rgba(0,0,0,0.04)] inset-0
+                    data-[state=open]:animate-in data-[state=closed]:animate-out 
+                    data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top 
+                    data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 
+                    data-[state=open]:duration-300 data-[state=closed]:duration-200`}
                     showCloseButton={false}
                 >
                     <div className='flex flex-col gap-4 p-6'>
