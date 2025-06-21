@@ -15,8 +15,7 @@ async function getDeviceType() {
         isMobile,
         image: {
             src: isMobile ? "/banner-mobile.png" : "/banner.png",
-            width: isMobile ? 226 : 399,
-            height: isMobile ? 317 : 556,
+            height: isMobile ? 569 : 598,
             alt: isMobile ? "Amor mobile banner" : "Amor desktop banner"
         }
     }
@@ -27,12 +26,11 @@ export default async function Home() {
 
     return (
         <div>
-            <div className="h-[569px] md:h-[598px] w-full relative flex justify-center items-center">
+            <div className={`h-[${image.height}px] w-full relative flex justify-center items-center`}>
                 <Image
                     src={image.src}
                     alt={image.alt}
-                    width={image.width}
-                    height={image.height}
+                    fill
                     className="object-cover"
                 />
                 <p className={`text-white text-center z-10 text-2xl md:text-5xl leading-9 md:leading-17 uppercase ${trajanPro3.className}`}>
